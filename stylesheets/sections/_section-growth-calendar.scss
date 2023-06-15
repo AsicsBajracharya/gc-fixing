@@ -1,0 +1,111 @@
+.section-growth-calendar {
+  .calendar-outer-container {
+    position: relative;
+    @media (min-width: 1200px) {
+      padding-right: 8rem;
+    }
+    .dropDown-container {
+      position: absolute;
+      left: 25.4rem;
+      top: 2.8rem;
+      z-index: 99;
+      @media (max-width: 565px) {
+        left: 170px;
+      }
+      .from-group {
+        display: flex;
+        select {
+          height: 6.3rem;
+          font-size: 2.4rem;
+          font-weight: 700;
+          color: $color-gc-blue;
+          height: 5.8rem;
+          border: none;
+          border-radius: 8px;
+          background-color: #f8f8f8;
+          &:not(:last-child) {
+            margin-right: 1.1rem;
+          }
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+  .event-list-container {
+    margin-top: 1.8rem;
+    ul.event-list {
+      list-style: none;
+      height: 42rem;
+      overflow-y: scroll;
+      li {
+        display: flex;
+        padding: 2rem 2rem 2rem 0;
+        background-color: $color-gc-cyan;
+        margin-bottom: 1.8rem;
+        transition: all 0.3s ease;
+        &:hover {
+          background-color: darken($color: $color-gc-cyan, $amount: 20%);
+        }
+        &:nth-child(2n) {
+          background-color: $color-gc-orange-1;
+          &:hover {
+            background-color: darken($color: $color-gc-orange-1, $amount: 20%);
+          }
+        }
+        .event-left {
+          border-right: 1px solid white;
+          width: 7.6rem;
+          text-align: center;
+          p {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0;
+          }
+        }
+        .event-title {
+          display: flex;
+          align-items: center;
+          padding: 1.4rem;
+          h3 {
+            flex-grow: 1;
+            font-size: 2rem;
+            font-weight: 400;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.section-growth-calendar {
+  .content-container {
+    .content-container-inner {
+      padding: 3.6rem 5.2rem;
+      box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
+      h2 {
+        margin-bottom: 3.1rem;
+        color: $color-gc-blue;
+      }
+      h3 {
+        color: $color-gc-blue;
+      }
+      p {
+        color: $color-gc-blue;
+      }
+    }
+  }
+  .content-container.event-details {
+    .image-container {
+      position: relative;
+      .pill-2 {
+        position: absolute;
+        bottom: 23px;
+        left: 23px;
+      }
+    }
+  }
+}

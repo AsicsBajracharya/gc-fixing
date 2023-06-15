@@ -1,0 +1,136 @@
+.jsCalendar {
+  table {
+    width: 100%;
+    tr {
+      display: block;
+      th,
+      td {
+        width: calc((100% - 31px) / 7);
+      }
+    }
+  }
+}
+
+.jsCalendar tbody td,
+.jsCalendar thead .jsCalendar-week-days th {
+  width: calc((100% - 31px) / 7);
+  height: 7.7rem;
+  font-size: 2.5rem;
+  line-height: 3;
+
+  @media (max-width: 565px) {
+    font-size: 15px;
+    line-height: 4;
+  }
+}
+
+.jsCalendar thead .jsCalendar-title-name {
+  font-family: "Calibri";
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: $color-gc-blue;
+  padding: 1rem 4.4rem;
+  background: #f8f8f8;
+  border-radius: 0.8rem;
+  // margin-left: 5.2rem;
+  margin-top: 1.2rem;
+  position: relative;
+  pointer-events: auto;
+  // &:before {
+  //   content: attr(calendar-chev-before);
+  //   position: absolute;
+  //   width: 1.3rem;
+  //   height: 2.1rem;
+  //   left: 1.5rem;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  //   cursor: pointer;
+  //   background-image: url("data:image/svg+xml,%3Csvg width='13' height='22' viewBox='0 0 13 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.5 20.5L1.5 11L11.5 1.5' stroke='%234EAFEA' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E ");
+  // }
+  // &:after {
+  //   content: "";
+  //   position: absolute;
+  //   width: 1.3rem;
+  //   height: 2.1rem;
+  //   right: 1.5rem;
+  //   top: 50%;
+  //   transform: translateY(-50%) rotateZ(180deg);
+  //   cursor: pointer;
+  //   background-image: url("data:image/svg+xml,%3Csvg width='13' height='22' viewBox='0 0 13 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.5 20.5L1.5 11L11.5 1.5' stroke='%234EAFEA' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E ");
+  // }
+}
+
+.jsCalendar-title {
+  padding: 1.1rem 5.2rem;
+  position: relative;
+  @media (max-width: 565px) {
+    padding: 1.1rem 1.2rem;
+  }
+}
+.jsCalendar thead .jsCalendar-nav-left,
+.jsCalendar thead .jsCalendar-nav-right {
+  top: 3.2rem;
+  font-size: 2.8rem;
+  z-index: 9;
+  @media (max-width: 565px) {
+    top: 3.5rem;
+  }
+  cursor: pointer;
+  &:after {
+    content: "";
+  }
+}
+
+.jsCalendar thead .jsCalendar-nav-left {
+  cursor: pointer;
+  position: absolute;
+  z-index: 9;
+
+  &:after {
+    content: url("data:image/svg+xml,%3Csvg  viewBox='0 0 13 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.5 20.5L1.5 11L11.5 1.5' stroke='%234EAFEA' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E ");
+    width: 12px;
+    /* border: 1px solid green; */
+    position: absolute;
+    top: 3px;
+  }
+}
+
+.jsCalendar thead .jsCalendar-nav-right {
+  position: absolute;
+  z-index: 9;
+
+  left: 19.3rem;
+  transform: rotateZ(180deg);
+  @media (max-width: 565px) {
+    left: 14.3rem;
+  }
+  &:after {
+    content: url("data:image/svg+xml,%3Csvg  viewBox='0 0 13 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.5 20.5L1.5 11L11.5 1.5' stroke='%234EAFEA' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E ");
+    width: 12px;
+    /* border: 1px solid green; */
+    position: absolute;
+    top: -2px;
+  }
+}
+
+.jsCalendar thead .jsCalendar-nav-left:hover,
+.jsCalendar thead .jsCalendar-nav-right:hover {
+  background-color: transparent;
+  color: #000;
+}
+
+.jsCalendar tbody td.jsCalendar-current {
+  border-radius: 50%;
+}
+
+.jsCalendar tbody td.jsCalendar-selected {
+  background-color: #52c9ff;
+  border-radius: 50%;
+  color: #fff;
+  box-sizing: border-box;
+  border: none;
+  width: calc((100% - 3.1rem) / 7);
+  height: 7.7rem;
+  font-size: 2.5rem;
+  line-height: 3;
+}

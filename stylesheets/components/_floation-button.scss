@@ -1,0 +1,13 @@
+.floating-button {
+  width: 89px;
+  position: fixed;
+  top: calc(100% - 15.8rem);
+  left: calc(100% - 15.8rem);
+  z-index: 999;
+  cursor: pointer;
+  @media (max-width: 768px) {
+    width: 5rem;
+    top: calc(100% - 16.7rem);
+    left: calc(100% - 8.8rem);
+  }
+}

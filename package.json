@@ -1,0 +1,24 @@
+{
+  "name": "gc_landing_page",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000G\u0000C\u0000_\u0000L\u0000a\u0000n\u0000d\u0000i\u0000n\u0000g\u0000_\u0000P\u0000a\u0000g\u0000e\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass stylesheets/main.scss css-landing/style.css -w --source-map true --source-map-embed true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frost-Digital-Ventures/GC_Landing_Page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Frost-Digital-Ventures/GC_Landing_Page/issues"
+  },
+  "homepage": "https://github.com/Frost-Digital-Ventures/GC_Landing_Page#readme",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}
