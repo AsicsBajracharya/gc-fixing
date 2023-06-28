@@ -758,13 +758,29 @@ jQuery(document).ready(function () {
     $(".error.passwordLogin").html("");
   });
 
-  $(".form-login").on("submit", function (e) {
+  $(".login-form-btn").on("click", function (e) {
     e.preventDefault();
+    console.log("click detected on login form");
+    var error = 0;
     if (!$("#email").val()) {
       $(".error.email").text("This field is required");
+      error++;
     }
-    if (!$("#password").val()) {
-      $(".error.password").text("This field is required");
+    if (!$("#passwordLogin").val()) {
+      $(".error.passwordLogin").text("This field is required");
+      error++;
+    }
+    if (!error) {
+      $(".login-form").submit();
+    }
+  });
+
+  $(".login-form input").on("keydown", function (e) {
+    console.log("keydown on login form");
+    if (e.which === 13) {
+      // Check if Enter key (key code 13) is pressed
+
+      $(".login-form").submit(); // Trigger form submission
     }
   });
 
@@ -863,18 +879,23 @@ jQuery(document).ready(function () {
     e.preventDefault();
     e.stopPropagation();
     var errorCount = 0;
-    if (!$("#email").val()) {
+    if (!$("#emailSignup").val()) {
       $(".error.email").text("This field is required");
       errorCount++;
+    } else {
+      var emailPattern = /^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+      if (!emailPattern.test($("#emailSignup").val())) {
+        $(".error.email").html("Please provide a correct email format");
+        errorCount++;
+      }
+      var emailValue = $("#emailSignup")
+        .val()
+        .substr(
+          $("#emailSignup").val().indexOf("@") + 1,
+          $("#emailSignup").val().length
+        );
     }
-    var emailPattern = /^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-    if (!emailPattern.test($("#email").val())) {
-      $(".error.email").html("Please provide a correct email format");
-      errorCount++;
-    }
-    var emailValue = $("#email")
-      .val()
-      .substr($("#email").val().indexOf("@") + 1, $("#email").val().length);
+
     public_mail_domain.forEach((el, index) => {
       if (el == emailValue) {
         $(".error.email").html("Please provide a correct email format");
@@ -963,7 +984,7 @@ jQuery(document).ready(function () {
     $(".terms2").removeClass("error");
   });
 
-  $(".signup-form").on("submit", function (e) {
+  $(".signup-form-submit-btn").on("click", function (e) {
     e.preventDefault();
     var form2ErrorCount = 0;
     if (!$("#firstName").val()) {
@@ -1002,7 +1023,7 @@ jQuery(document).ready(function () {
     if (!form2ErrorCount) {
       //submit form here
       console.log("ready to submit");
-      $(this).submit();
+      $(".signup-form").submit();
     }
   });
 });
