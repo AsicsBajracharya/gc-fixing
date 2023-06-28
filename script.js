@@ -791,6 +791,7 @@ jQuery(document).ready(function () {
 
   $(".signup-form").on("submit", function (e) {
     e.preventDefault();
+
     if (!$("#email").val()) {
       $(".error.email").text("This field is required");
       return;
@@ -818,6 +819,55 @@ jQuery(document).ready(function () {
   $("#lastName").on("change paste keyup", function () {
     $(".error.lastName").html("");
   });
+
+  $("#title").on("blur", function () {
+    if (!$(this).val().length) {
+      $(".error.title").html("This field is required");
+      return;
+    }
+  });
+
+  $("#company").on("change paste keyup", function () {
+    $(".error.company").html("");
+  });
+  $("#company").on("blur", function () {
+    if (!$(this).val().length) {
+      $(".error.company").html("This field is required");
+      return;
+    }
+  });
+
+  $("#phone").on("change paste keyup", function () {
+    $(".error.phone").html("");
+  });
+  $("#phone").on("blur", function () {
+    if (!$(this).val().length) {
+      $(".error.phone").html("This field is required");
+      return;
+    }
+  });
+
+  $("#country").on("change paste keyup", function () {
+    $(".error.country").html("");
+  });
+  $("#country").on("blur", function () {
+    if (!$(this).val().length) {
+      $(".error.country").html("This field is required");
+      return;
+    }
+  });
+
+  $("#title").on("change paste keyup", function () {
+    $(".error.title").html("");
+  });
+
+  $("#passwordConfirm").on("change paste keyup", function () {
+    $(".error.passwordConfirm").html("");
+    if ($(this).val().length > 20) {
+      $(".error.password").html("Password must be under 20 characters");
+    }
+  });
+
   $("#terms1").on("change", function () {
     $(".terms1").removeClass("error");
   });
@@ -827,23 +877,43 @@ jQuery(document).ready(function () {
 
   $(".signup-form-2").on("submit", function (e) {
     e.preventDefault();
+    var form2ErrorCount = 0;
     if (!$("#firstName").val()) {
       $(".error.firstName").text("This field is required");
-      return;
+      form2ErrorCount++;
     }
     if (!$("#lastName").val()) {
       $(".error.lastName").text("This field is required");
-      return;
+      form2ErrorCount++;
     }
-    // if (!$("#terms2").checked) {
-    //   $(".terms2").addClass("error");
-    //   console.log("terms 2 is empty");
-    //   return;
-    // }
-    // if (!$("#terms1").checked) {
-    //   $(".terms1").addClass("error");
-    //   console.log("terms 1 is empty");
-    //   return;
-    // }
+    if (!$("#title").val()) {
+      $(".error.title").text("This field is required");
+      form2ErrorCount++;
+    }
+    if (!$("#company").val()) {
+      $(".error.company").text("This field is required");
+      form2ErrorCount++;
+    }
+    if (!$("#phone").val()) {
+      $(".error.phone").text("This field is required");
+      form2ErrorCount++;
+    }
+    if (!$("#country").val()) {
+      $(".error.country").text("This field is required");
+      form2ErrorCount++;
+    }
+    if (!$("#terms2").is(":checked")) {
+      $(".terms2").addClass("error");
+      form2ErrorCount++;
+    }
+    if (!$("#terms1").is(":checked")) {
+      $(".terms1").addClass("error");
+      form2ErrorCount++;
+    }
+
+    if (!form2ErrorCount) {
+      //submit form here
+      console.log("ready to submit");
+    }
   });
 });
