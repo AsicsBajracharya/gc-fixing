@@ -1,8 +1,11 @@
 .section-coaching {
   padding: 69px 0;
   background-size: cover;
-  .header-box{
+  .header-box {
     margin-bottom: 53px;
+  }
+  p {
+    font-weight: 700;
   }
   @media (max-width: 768px) {
     padding: 21px 0;
@@ -26,5 +29,13 @@
 
   .slick-slide {
     height: inherit !important;
+  }
+  .main-text {
+    width: 570px;
+    max-width: 100%;
+    margin: 0 auto;
+    @media (max-width: 1440px) {
+      width: 440px;
+    }
   }
 }

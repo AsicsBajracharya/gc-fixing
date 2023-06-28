@@ -9,7 +9,22 @@
 .slick-position-end {
   position: absolute;
   top: calc(100% + 5rem);
-  right: calc((100vw - 112.8rem) / 2);
+  right: calc((100vw - 1128px) / 2);
+  @media (max-width: 1280px) {
+    right: calc((100vw - 1022px) / 2);
+  }
+  @media (max-width: 1280px) {
+    right: calc((100vw - 577px) / 2);
+  }
+  @media (max-width: 768px) {
+    right: calc((100vw - 451px) / 2);
+  }
+  @media (max-width: 768px) {
+    right: calc((100vw - 451px) / 2);
+  }
+  @media (max-width: 565px) {
+    right: 55px;
+  }
   // transform: translate(0, 100%);
 }
 
@@ -66,6 +81,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
   .buttn-container {
     display: flex;
     justify-content: flex-end;
@@ -131,7 +149,7 @@
 
 .pill-secondary {
   display: flex !important;
-  padding: 1.6rem 1.5rem;
+  padding: 6px 10px;
   width: fit-content;
   border-radius: 0.8rem;
   background-color: white;
@@ -249,4 +267,25 @@ select {
 
 a {
   color: $color-gc-blue;
+}
+
+.order-md-2 {
+  @media (max-width: 768px) {
+    order: 2;
+  }
+}
+
+.overlay-video {
+  iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    aspect-ratio: 16/9;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

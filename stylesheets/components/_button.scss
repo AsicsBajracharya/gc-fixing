@@ -1,8 +1,9 @@
 .btn {
-  padding: 2.8rem 5.8rem;
+  padding: 1.5rem 5.8rem;
   font-size: 2.4rem;
   font-weight: 700;
   transition: all 0.3s ease;
+  border-radius: 4px;
   @media (max-width: 768px) {
     font-size: 1.6rem;
     padding: 1rem;
@@ -22,7 +23,7 @@
   &:hover,
   &:active,
   &:focus {
-    background-color: $color-gc-orange;
+    background-color: $color-gc-orange !important;
     box-shadow: none;
 
     // .btn-icon {
@@ -180,6 +181,7 @@
     transition: all 0.3s ease;
   }
   &:hover {
+    color: $color-gc-orange;
     .message-icon {
       display: inline-block;
       margin-right: 1.2rem;
@@ -264,4 +266,67 @@
   background-color: transparent;
   color: red;
   border: 0.1rem solid red;
+}
+
+.btn-white-hover {
+  svg {
+    path {
+      stroke: white;
+    }
+  }
+  &:hover {
+    background-color: white;
+    color: $color-gc-orange;
+    border: none;
+    svg {
+      path {
+        stroke: $color-gc-orange;
+      }
+    }
+  }
+}
+
+.btn-transparent-arrow-move {
+  &:hover {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+  }
+}
+
+.btn-loading {
+  border: 1px solid $color-muted;
+  color: $color-muted;
+  cursor: not-allowed;
+  &:hover,
+  &:active,
+  &:focus {
+    border: 1px solid $color-muted;
+    color: $color-muted;
+  }
+}
+
+.btn-success {
+  border: 1px solid $color-gc-orange;
+  color: $color-gc-orange;
+  background: transparent;
+  cursor: not-allowed;
+  &:hover,
+  &:active,
+  &:focus {
+    background: transparent;
+    color: $color-gc-orange;
+    border: $color-gc-orange;
+  }
+}
+
+.btn-fail {
+  border: 1px solid $color-error;
+  color: $color-error;
+  &:hover,
+  &:active,
+  &:focus {
+    border: 1px solid $color-error;
+    color: $color-error;
+  }
 }

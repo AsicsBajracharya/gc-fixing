@@ -135,6 +135,8 @@
         img {
           max-height: 22rem;
           object-fit: cover;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
         }
       }
       .content-container {

@@ -1,9 +1,24 @@
 .section-growth-partners {
-  padding: 55px 0 79px;
+  padding: 55px 0 236px;
+  overflow-x: hidden;
   .header-box {
     margin-bottom: 23px;
     h1 {
       color: $color-gc-blue;
+    }
+  }
+  .partner-list-container {
+    position: relative;
+
+    .partner-list {
+      position: absolute;
+      width: 100%;
+    }
+    .partner-list-1 {
+      left: 0;
+    }
+    .partner-list-2 {
+      left: -100%;
     }
   }
   ul.partner-list {
@@ -14,6 +29,10 @@
     list-style-type: none;
     justify-content: center;
     align-items: center;
+    animation: infiScroll;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     .partner-item {
       max-width: 136px;
     }

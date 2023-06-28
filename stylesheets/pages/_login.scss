@@ -1,0 +1,184 @@
+.page-login,
+.page-signup {
+  //   padding-top: 26.3rem;
+  h1 {
+    color: $color-gc-blue;
+  }
+
+  .login-form {
+    @media (min-width: 768px) {
+      padding-right: 6rem;
+    }
+  }
+  .content-container.left {
+    padding-top: 26.3rem;
+    padding-left: calc((100vw - 1150px) / 2);
+    @media (max-width: 768px) {
+      margin-bottom: 30px;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .content-container.right {
+    background-color: $color-grey-solid;
+    padding-top: 24.6rem;
+    height: 100vh;
+    margin-right: -15px;
+    padding-left: 6.9rem;
+    @media (min-width: 1366px) {
+      margin-left: 40px;
+    }
+    @media (max-width: 768px) {
+      display: none;
+    }
+    .header-box {
+      margin-bottom: 3.9rem;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      margin-top: 2.7rem;
+      padding-left: 3rem;
+      margin-bottom: 7.3rem;
+      li {
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+.signup-form-step-1 {
+  .header-box {
+    margin-bottom: 4.2rem;
+  }
+}
+
+.signup-form-step-2 {
+  padding-top: 24rem;
+  .header-box {
+    margin-bottom: 6.1rem;
+  }
+  .error {
+    margin-bottom: 4.8rem;
+  }
+}
+
+.gc-form {
+  // height: 26.3rem;
+  @media (max-width: 768px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .error.email {
+    margin-bottom: 4rem;
+  }
+  .error.password {
+    margin-bottom: 4rem;
+  }
+  .error.passwordConfirm {
+    margin-bottom: 4.8rem;
+  }
+
+  input,
+  select {
+    font-size: 1.8rem;
+    font-weight: 400;
+    border-radius: 10px !important;
+    padding: 3.6rem 1.3rem;
+    border: 2px solid $color-gc-blue;
+    transition: all 0.3s ease;
+    @media (max-width: 768px) {
+      padding: 27px 13px;
+    }
+    &:active,
+    &:focus {
+      border-color: $color-gc-cyan;
+    }
+  }
+  .input-group {
+    .input-group-append {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translate(0, -50%);
+      z-index: 3;
+    }
+  }
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    select {
+      padding-top: 2.3rem;
+      padding-bottom: 2.3rem;
+    }
+  }
+  .terms-conditions-box {
+    margin-bottom: 5rem;
+    p {
+      margin: 0;
+      font-size: 18px;
+    }
+    input[type="checkbox"] {
+      margin-right: 14px;
+    }
+    .input-group {
+      flex-wrap: nowrap;
+      &:not(:last-child) {
+        margin-bottom: 4.1rem;
+      }
+    }
+  }
+  .button-container {
+    button {
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.error {
+  color: $color-error;
+}
+
+.banner-bottom {
+  display: none;
+  background-color: $color-grey-solid;
+  padding: 21px 0;
+
+  .header-box {
+    margin-right: 20px;
+    h3 {
+      font-size: 24px;
+      margin-bottom: 0;
+      color: $color-gc-blue;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.signup-form-step-2 {
+  .banner-bottom {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5.3rem;
+    .header-box {
+      margin-bottom: 0;
+    }
+  }
+}

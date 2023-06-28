@@ -5,27 +5,27 @@
       display: block;
 
       .content-container {
-        margin-top: 107px;  
+        margin-top: 178px;
       }
     }
     .slick-custom {
-      left: calc(((100% - 1232px) / 2) - -477px);
-      bottom: 403px;
-      @media (max-width: 1365px) {
-        left: calc(((100% - 1232px) / 2) - -520px) !important;
-        bottom: 316px;
-      }
-      @media (max-width: 1200px) {
-        left: calc(((100% - 1232px) / 2) - -149px) !important;
-        bottom: 316px;
-      }
+      left: calc(((100% - 1232px) / 2) - -14px) !important;
+      bottom: 264px;
+      // @media (max-width: 1365px) {
+      //   left: calc(((100% - 1232px) / 2) - -520px) !important;
+      //   bottom: 316px;
+      // }
+      // @media (max-width: 1200px) {
+      //   left: calc(((100% - 1232px) / 2) - -149px) !important;
+      //   bottom: 316px;
+      // }
       @media (max-width: 990px) {
         left: calc(((100% - 1232px) / 2) - -270px) !important;
         bottom: 316px;
       }
       @media (max-width: 768px) {
         left: calc(((100% - 1232px) / 2) - -361px) !important;
-        bottom: 465px;
+        bottom: 429px;
       }
     }
   }
@@ -56,13 +56,13 @@
     align-items: center;
     @media (max-width: 768px) {
       width: 100%;
-      padding: 30px 0;
+      padding: 30px 15px;
     }
   }
   .right {
     flex-grow: 1;
     img {
-      max-height: 534px;
+      height: 100%;
       object-fit: cover;
       @media (max-width: 768px) {
         max-height: 371px;
@@ -76,44 +76,53 @@
     margin-bottom: 55px;
   }
   .stories-slider-container {
-    .slick-slider {
-      margin: 0 13px;
-    }
-    .slick-slide {
-      margin-left: 13px;
-      margin-right: 13px;
-    }
+    // .slick-slider {
+    //   margin: 0 13px;
+    // }
+    // .slick-slide {
+    //   margin-left: 13px;
+    //   margin-right: 13px;
+    // }
     .item {
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid #c7c7c7;
+      padding: 13px;
+      .content-container-outer {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.15);
+      }
       .content-container {
-        padding: 23px 33px;
-        h3{
+        padding: 33px 33px;
+        h3 {
           color: $color-gc-blue;
         }
       }
     }
 
-    .slick-custom-prev {
-      position: absolute;
-      top: 50%;
-      transform: translate(-60px, -50%);
-      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    }
-    .slick-custom-next {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translate(47px, -50%);
-      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    }
+    // .slick-custom-prev {
+    //   position: absolute;
+    //   top: 50%;
+    //   transform: translate(-60px, -50%);
+    //   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    // }
+    // .slick-custom-next {
+    //   position: absolute;
+    //   top: 50%;
+    //   right: 0;
+    //   transform: translate(47px, -50%);
+    //   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    // }
   }
 }
 
 .section-sectors {
+  @media (max-width: 768px) {
+    padding-bottom: 83px;
+  }
   .header-box {
-    margin-bottom: 39px;
+    margin-bottom: 3.9rem;
+    @media (max-width: 1366px) {
+      margin-bottom: 2.9rem;
+    }
   }
   .image-container-main {
     padding: 73px 46px;
@@ -124,6 +133,7 @@
     .pill {
       padding: 10px 15px;
       border-radius: 5px;
+      margin-bottom: 4.3rem;
       p {
         font-size: 24px;
         color: $color-gc-blue-shade-1;
@@ -137,6 +147,9 @@
       border-radius: 5px;
       overflow: hidden;
       background-size: cover;
+      @media (max-width: 1366px) {
+        height: 170px;
+      }
       &:not(:last-child) {
         margin-bottom: 27px;
       }
@@ -161,19 +174,19 @@
       }
     }
   }
-  .slick-custom-prev {
-    position: absolute;
-    top: 50%;
-    transform: translate(-60px, -50%);
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  }
-  .slick-custom-next {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(47px, -50%);
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  } 
+  // .slick-custom-prev {
+  //   position: absolute;
+  //   top: 50%;
+  //   transform: translate(-60px, -50%);
+  //   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  // }
+  // .slick-custom-next {
+  //   position: absolute;
+  //   top: 50%;
+  //   right: 0;
+  //   transform: translate(47px, -50%);
+  //   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  // }
 }
 
 .section-innovation-leadership-council {
@@ -191,15 +204,23 @@
       padding: 28px;
       background-color: white;
       margin-bottom: 21px;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: $color-gc-blue;
+        img {
+          filter: invert(1);
+        }
+      }
     }
   }
 }
 
-.section-community-slider {   
+.section-community-slider {
   // padding: 262px 0 178px;
   display: flex;
   align-items: center;
   overflow-x: hidden;
+  position: relative;
   .left {
     padding-left: calc((100% - 1205px) / 2);
     position: relative;
@@ -210,23 +231,25 @@
     }
   }
   .right {
-    width: 67%;
+    width: 56%;
     flex-grow: 1;
-    position: relative;
-    padding: 128px 0;
-    background-size: cover;
     .background-abstract-image {
-      position: absolute;
-      height: 604px;
-      z-index: -1;
-      top: -130px;
-      left: 180px;
-      @media (min-width: 1440px) {
-        width: 1140px;
-        overflow: hidden;
-      }
+      // position: absolute;
+      // height: 604px;
+      // z-index: -1;
+      // top: -130px;
+      // left: 180px;
+      // @media (min-width: 1440px) {
+      //   width: 1140px;
+      //   overflow: hidden;
+      // }
     }
     .community-slider-container {
+      position: absolute;
+      top: 50%;
+      left: 41%;
+      width: 120%;
+      transform: translate(-50%, -50%);
       .community-slide-item {
         background-color: white;
         border-radius: 10px;
@@ -277,6 +300,24 @@
     margin-left: 20px;
     margin-right: 20px;
   }
+
+  .slick-custom-next {
+    top: -83px;
+    left: calc(76% + 50px + 20px);
+    @media (max-width: 1440px) {
+      left: calc(73% + 50px + 20px);
+    }
+    @media (max-width: 1366px) {
+      left: calc(73% + 50px + 40px);
+    }
+  }
+  .slick-custom-prev {
+    top: -83px;
+    left: 89%;
+    @media (max-width: 1200px) {
+      left: 86%;
+    }
+  }
 }
 
 .section-alternate-articles {
@@ -302,18 +343,23 @@
   background-size: cover;
 }
 
-
-
-.section-strategic-imperative, .section-mindXChange{
-  .header-box{
-    margin-bottom: 43px;
+.section-strategic-imperative,
+.section-mindXChange,
+.section-innovation {
+  .header-box {
+    margin-bottom: 4.3rem;
   }
-  .text-box{
-    margin-bottom: 43px;
+  .text-box {
+    margin-bottom: 4.3rem;
     color: $color-black;
   }
-  .image-container{
-    width: 636px;
+  .image-container {
+    width: 63.6rem;
     max-width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    @media (max-width: 768px) {
+      margin-bottom: 34px;
+    }
   }
 }

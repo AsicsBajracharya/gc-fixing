@@ -271,12 +271,12 @@
       }
     }
 
-    // &:hover {
-    //   .fs-tooltip {
-    //     opacity: 1;
-    //     visibility: visible;
-    //   }
-    // }
+    &:hover {
+      .fs-tooltip {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 
   &__content {
@@ -286,12 +286,12 @@
     right: 12.6%;
     top: 25.2%;
 
-    // &:hover {
-    //   .fs-tooltip {
-    //     opacity: 1;
-    //     visibility: visible;
-    //   }
-    // }
+    &:hover {
+      .fs-tooltip {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 
   &__coaching {
@@ -302,12 +302,12 @@
     transform: translateX(-50%);
     bottom: 9%;
 
-    // &:hover {
-    //   .fs-tooltip {
-    //     opacity: 1;
-    //     visibility: visible;
-    //   }
-    // }
+    &:hover {
+      .fs-tooltip {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
 
     .fs-tooltip {
       left: -253px;
@@ -372,10 +372,13 @@
 
 .section-road {
   .header-box {
-    width: 638px;
+    width: 617px;
     max-width: 100%;
     margin: 0 auto;
     margin-bottom: 33px;
+    @media (max-width: 768px) {
+      width: 400px;
+    }
     h1 {
       color: $color-gc-blue;
       margin: 0;

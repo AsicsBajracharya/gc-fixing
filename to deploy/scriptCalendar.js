@@ -6,6 +6,17 @@ $(document).ready(function () {
     var myCalendar = jsCalendar.new(element);
   }
 
+  $(".jsCalendar table thead tr.jsCalendar-week-days").html(`
+    <th>Sun</th>
+    <th>Mon</th>
+    <th>Tue</th>
+    <th>Wed</th>
+    <th>Thu</th>
+    <th>Fri</th>
+    <th>Sat</th>
+  `);
+
+  $("th.jsCalendar-title").after("<div><h1>asdfd</h1></div>");
   const events = [];
   var eventsData = [];
   var eventDates = [];

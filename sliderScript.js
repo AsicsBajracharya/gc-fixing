@@ -101,7 +101,7 @@ $(document).ready(function () {
           slidesToScroll: 1,
           infinite: true,
           centerMode: true,
-          centerPadding: "50px",
+          centerPadding: "20px",
         },
       },
     ],
@@ -163,8 +163,7 @@ $(document).ready(function () {
     // autoplaySpeed: 2000,
     slidesToShow: 3,
     slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: "50px",
+
     prevArrow:
       "<div class = 'slick-custom-prev slick-custom slick-arrow-center-sm'><span></span></div>",
     nextArrow:
@@ -176,6 +175,8 @@ $(document).ready(function () {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
+          centerMode: true,
+          centerPadding: "10px",
         },
       },
     ],
@@ -184,18 +185,28 @@ $(document).ready(function () {
     // auto: true,
     // autoplay: true,
     // autoplaySpeed: 2000,
-    slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     prevArrow:
       "<div class = 'slick-custom-prev slick-custom slick-position-end'><span></span></div>",
     nextArrow:
       "<div class = 'slick-custom-next slick-custom slick-position-end'><span></span></div>",
     responsive: [
       {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 3,
+          infinite: true,
+          centerMode: true,
+          centerPadding: "20px",
+        },
+      },
+      {
         breakpoint: 1366,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 2,
+          slidesToScroll: 3,
           infinite: true,
           centerMode: true,
           centerPadding: "20px",
@@ -207,8 +218,6 @@ $(document).ready(function () {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          centerMode: true,
-          centerPadding: "20px",
         },
       },
     ],
@@ -270,7 +279,7 @@ $(document).ready(function () {
     // auto: true,
     // autoplay: true,
     // autoplaySpeed: 2000,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
     infinite: true,
     prevArrow:
@@ -284,8 +293,6 @@ $(document).ready(function () {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          centerMode: true,
-          centerPadding: "20px",
         },
       },
     ],

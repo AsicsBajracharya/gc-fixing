@@ -2,7 +2,7 @@
 
 // 1. Configuration and helpers
 @import "abstracts/variables", "abstracts/functions", "abstracts/helper",
-  "abstracts/mixins", "abstracts/utilities";
+  "abstracts/mixins", "abstracts/utilities", "abstracts/animations.scss";
 
 // 2. Vendors
 @import "vendors/normalize";
@@ -16,7 +16,7 @@
 // 5. Components
 @import "components/button", "components/news_slider", "components/chart",
   "components/header", "components/common", "components/resuables",
-  "components/jsCalendar", "components/floation-button", "components/slick" ;
+  "components/jsCalendar", "components/floation-button", "components/slick";
 
 // Section specefic styles
 @import "sections/section-hero", "sections/section-road",
@@ -31,7 +31,8 @@
   "sections/section-growth-council-think-tank",
   "sections/section-growth-calendar", "sections/section-strategic-imperative";
 // 6. Page-specific styles
-@import "pages/home", "pages/review", "pages/prospect";
+@import "pages/home", "pages/review", "pages/prospect", "pages/login",
+  "pages/notification";
 
 // 7. Themes
 @import "themes/default";

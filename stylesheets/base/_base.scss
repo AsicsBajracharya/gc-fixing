@@ -7,8 +7,11 @@
  */
 html {
   font-size: 62.5% !important;
+  // font-size: 45% !important;
+  scroll-behavior: smooth;
   @media (max-width: 1366px) {
     font-size: 52% !important;
+    // font-size: 34% !important;
   }
 }
 

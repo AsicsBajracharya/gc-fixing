@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass stylesheets/main.scss css-landing/style.css -w --source-map true --source-map-embed true"
+    "sass": "node-sass stylesheets/main.scss css-landing/style.css -w --source-map true --source-map-embed true",
+    "build": "node-sass stylesheets/main.scss css-landing/minified.css --output-style compressed"
   },
   "repository": {
     "type": "git",

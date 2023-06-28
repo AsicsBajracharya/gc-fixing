@@ -5,6 +5,7 @@
 footer {
   background-color: $color-black;
   padding: 7.1rem 0;
+  color: white;
   @media (max-width: 768px) {
     padding: 3rem 0 6rem;
   }
@@ -37,6 +38,12 @@ footer {
         width: 3.4rem;
         margin-right: 2.5rem;
       }
+    }
+  }
+  .footer-bottom {
+    a {
+      color: white;
+      text-decoration: underline;
     }
   }
 }

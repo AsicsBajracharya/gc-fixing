@@ -3,9 +3,56 @@
     width: 100%;
     tr {
       display: block;
-      th,
+
       td {
-        width: calc((100% - 31px) / 7);
+        // width: calc((100% - 31px) / 7);
+      }
+    }
+    .jsCalendar-title-row {
+      display: flex;
+      padding: 11px 0;
+      .jsCalendar-title {
+        display: flex;
+        background: #f8f8f8;
+        align-items: center;
+        padding: 10px 18px;
+        margin-right: 42px;
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 8px;
+        .jsCalendar-title-name {
+          white-space: nowrap;
+        }
+        .left-chev,
+        .right-chev {
+          display: flex;
+          cursor: pointer;
+        }
+      }
+      select {
+        font-size: 20px;
+        font-weight: 700;
+        background: #f8f8f8;
+        border-radius: 0;
+        border: none;
+        border-radius: 8px;
+        &:not(:last-child) {
+          margin-right: 42px;
+        }
+      }
+    }
+    tr.jsCalendar-week-days {
+      display: flex;
+      justify-content: space-between;
+      th {
+        color: $color-muted;
+        font-weight: 500;
+      }
+    }
+    tbody {
+      tr {
+        display: flex;
+        justify-content: space-between;
       }
     }
   }
@@ -13,10 +60,10 @@
 
 .jsCalendar tbody td,
 .jsCalendar thead .jsCalendar-week-days th {
-  width: calc((100% - 31px) / 7);
-  height: 7.7rem;
+  // width: calc((100% - 31px) / 7);
+  // height: 7.7rem;
   font-size: 2.5rem;
-  line-height: 3;
+  // line-height: 3;
 
   @media (max-width: 565px) {
     font-size: 15px;
@@ -26,14 +73,14 @@
 
 .jsCalendar thead .jsCalendar-title-name {
   font-family: "Calibri";
-  font-size: 2.4rem;
+  font-size: 22px;
   font-weight: 700;
   color: $color-gc-blue;
-  padding: 1rem 4.4rem;
-  background: #f8f8f8;
+  // padding: 1rem 4.4rem;
+
   border-radius: 0.8rem;
   // margin-left: 5.2rem;
-  margin-top: 1.2rem;
+  // margin-top: 1.2rem;
   position: relative;
   pointer-events: auto;
   // &:before {
@@ -60,13 +107,13 @@
   // }
 }
 
-.jsCalendar-title {
-  padding: 1.1rem 5.2rem;
-  position: relative;
-  @media (max-width: 565px) {
-    padding: 1.1rem 1.2rem;
-  }
-}
+// .jsCalendar-title {
+//   padding: 1.1rem 5.2rem;
+//   position: relative;
+//   @media (max-width: 565px) {
+//     padding: 1.1rem 1.2rem;
+//   }
+// }
 .jsCalendar thead .jsCalendar-nav-left,
 .jsCalendar thead .jsCalendar-nav-right {
   top: 3.2rem;
@@ -123,14 +170,71 @@
   border-radius: 50%;
 }
 
-.jsCalendar tbody td.jsCalendar-selected {
-  background-color: #52c9ff;
+.jsCalendar tbody td.registered {
   border-radius: 50%;
-  color: #fff;
   box-sizing: border-box;
   border: none;
-  width: calc((100% - 3.1rem) / 7);
-  height: 7.7rem;
-  font-size: 2.5rem;
-  line-height: 3;
+
+  position: relative;
+  &:after {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+  }
+}
+
+.jsCalendar td.virtual,
+.jsCalendar-current {
+  color: white;
+  background-color: $color-gc-cyan;
+  &:hover {
+    background-color: darken($color: $color-gc-cyan, $amount: 20%);
+  }
+  position: relative;
+}
+
+.jsCalendar td.in-person {
+  background-color: $color-gc-orange;
+  color: white;
+  &:hover {
+    background-color: darken($color: $color-gc-orange, $amount: 20%);
+  }
+}
+
+.jsCalendar td {
+  border-radius: 50% !important;
+}
+
+.jsCalendar {
+  table {
+    max-width: 550px;
+    thead {
+      .jsCalendar-weeek-days {
+        th {
+          font-size: 21px !important;
+        }
+      }
+    }
+  }
+}
+
+.jsCalendar tbody td,
+.jsCalendar thead .jsCalendar-week-days th {
+  font-size: 21px;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.jsCalendar-title-left,
+.jsCalendar-title-right {
+  display: none;
 }
