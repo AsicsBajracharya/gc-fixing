@@ -709,18 +709,18 @@ jQuery(document).ready(function () {
       return;
     }
 
-    var emailPattern = /^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-    if (!emailPattern.test($(this).val())) {
-      $(".error.email").html("Please provide a correct email format");
-    }
-    var emailValue = $(this)
-      .val()
-      .substr($(this).val().indexOf("@") + 1, $(this).val().length);
-    public_mail_domain.forEach((el, index) => {
-      if (el == emailValue) {
-        $(".error.email").html("Please provide a correct email format");
-      }
-    });
+    // var emailPattern = /^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    // if (!emailPattern.test($(this).val())) {
+    //   $(".error.email").html("Please provide a correct email format");
+    // }
+    // var emailValue = $(this)
+    //   .val()
+    //   .substr($(this).val().indexOf("@") + 1, $(this).val().length);
+    // public_mail_domain.forEach((el, index) => {
+    //   if (el == emailValue) {
+    //     $(".error.email").html("Please provide a correct email format");
+    //   }
+    // });
   });
 
   $(".toggle-visibility").on("click", function () {
@@ -748,17 +748,14 @@ jQuery(document).ready(function () {
     }
   });
 
-  $("#password").on("blur", function () {
+  $("#passwordLogin").on("blur", function () {
     if (!$(this).val().length) {
-      $(".error.password").html("This field is required");
+      $(".error.passwordLogin").html("This field is required");
     }
   });
 
-  $("#password").on("change paste keyup", function () {
-    $(".error.password").html("");
-    if ($(this).val().length > 20) {
-      $(".error.password").html("Password must be under 20 characters");
-    }
+  $("#passwordLogin").on("change paste keyup", function () {
+    $(".error.passwordLogin").html("");
   });
 
   $(".form-login").on("submit", function (e) {
@@ -769,6 +766,56 @@ jQuery(document).ready(function () {
     if (!$("#password").val()) {
       $(".error.password").text("This field is required");
     }
+  });
+
+  //SIGNUP FORM
+
+  $("#emailSignup").on("change paste keyup", function () {
+    console.log("CHANGE EVENT TRIGGERED ON INPUT");
+    $(".error.email").html("");
+  });
+
+  $("#emailSignup").on("blur", function () {
+    if (!$(this).val().length) {
+      $(".error.email").html("This field is required");
+      return;
+    }
+
+    var emailPattern = /^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    if (!emailPattern.test($(this).val())) {
+      $(".error.email").html("Please provide a correct email format");
+    }
+    var emailValue = $(this)
+      .val()
+      .substr($(this).val().indexOf("@") + 1, $(this).val().length);
+    public_mail_domain.forEach((el, index) => {
+      if (el == emailValue) {
+        $(".error.email").html("Please provide a correct email format");
+      }
+    });
+  });
+
+  $("#password").on("blur", function () {
+    if (!$(this).val().length) {
+      $(".error.password").html("This field is required");
+      return;
+    }
+    const passwordPattern =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const isValidPassword = passwordPattern.test($(this).val());
+    if (!isValidPassword) {
+      $(".error.password").html(`
+           <ul class = "error">
+            <li>Your password should be at least 8 characters long.</li>
+             <li>Include a combination of uppercase and lowercase letters.</li>
+              <li>Include at least one digit (0-9).</li>
+               <li>Include at least one special character, such as @, #, $, %, etc.</li>
+           </ul>`);
+    }
+  });
+
+  $("#password").on("change paste keyup", function () {
+    $(".error.password").html("");
   });
 
   $("#passwordConfirm").on("blur", function () {
@@ -789,27 +836,68 @@ jQuery(document).ready(function () {
     }
   });
 
-  $(".signup-form").on("submit", function (e) {
-    e.preventDefault();
+  // $(".signup-form").on("submit", function (e) {
+  //   e.preventDefault();
 
+  //   if (!$("#email").val()) {
+  //     $(".error.email").text("This field is required");
+  //     return;
+  //   }
+  //   if (!$("#password").val()) {
+  //     $(".error.password").text("This field is required");
+  //     return;
+  //   }
+  //   if (!$("#passwordConfirm").val()) {
+  //     $(".error.passwordConfirm").text("This field is required");
+  //     return;
+  //   }
+  //   if ($("#passwordConfirm").val() !== $("#password").val()) {
+  //     $(".error.passwordConfirm").text("Password do not match");
+  //     return;
+  //   }
+  //   $(".signup-form-step-2").removeClass("d-none");
+  //   $(".signup-form-step-1").addClass("d-none");
+  // });
+
+  $(".signup-form-1").on("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var errorCount = 0;
     if (!$("#email").val()) {
       $(".error.email").text("This field is required");
-      return;
+      errorCount++;
     }
+    var emailPattern = /^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    if (!emailPattern.test($("#email").val())) {
+      $(".error.email").html("Please provide a correct email format");
+      errorCount++;
+    }
+    var emailValue = $("#email")
+      .val()
+      .substr($("#email").val().indexOf("@") + 1, $("#email").val().length);
+    public_mail_domain.forEach((el, index) => {
+      if (el == emailValue) {
+        $(".error.email").html("Please provide a correct email format");
+        errorCount++;
+      }
+    });
+
     if (!$("#password").val()) {
       $(".error.password").text("This field is required");
-      return;
+      errorCount++;
     }
     if (!$("#passwordConfirm").val()) {
       $(".error.passwordConfirm").text("This field is required");
-      return;
+      errorCount++;
     }
     if ($("#passwordConfirm").val() !== $("#password").val()) {
       $(".error.passwordConfirm").text("Password do not match");
-      return;
+      errorCount++;
     }
-    $(".signup-form-step-2").removeClass("d-none");
-    $(".signup-form-step-1").addClass("d-none");
+    if (!errorCount) {
+      $(".signup-form-step-2").removeClass("d-none");
+      $(".signup-form-step-1").addClass("d-none");
+    }
   });
 
   $("#firstName").on("change paste keyup", function () {
@@ -875,7 +963,7 @@ jQuery(document).ready(function () {
     $(".terms2").removeClass("error");
   });
 
-  $(".signup-form-2").on("submit", function (e) {
+  $(".signup-form").on("submit", function (e) {
     e.preventDefault();
     var form2ErrorCount = 0;
     if (!$("#firstName").val()) {
@@ -914,6 +1002,7 @@ jQuery(document).ready(function () {
     if (!form2ErrorCount) {
       //submit form here
       console.log("ready to submit");
+      $(this).submit();
     }
   });
 });
