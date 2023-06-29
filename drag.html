@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag try</title>
+  </head>
+  <style>
+    #dragDiv {
+      width: 100px;
+      height: 100px;
+      background-color: #ff0000;
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor: grab;
+    }
+  </style>
+  <body>
+    <div id="dragDiv">Drag me!</div>
+    <sript>
+      var dragDiv = document.getElementById('dragDiv'); var offsetX, offsetY;
+      var isDragging = false; dragDiv.addEventListener('mousedown',
+      function(event) { // Store the initial position offsets and set dragging
+      flag offsetX = event.clientX - dragDiv.offsetLeft; offsetY = event.clientY
+      - dragDiv.offsetTop; isDragging = true; dragDiv.style.cursor = 'grabbing';
+      }); document.addEventListener('mousemove', function(event) { if
+      (isDragging) { // Update the div's position based on the mouse movement
+      dragDiv.style.left = (event.clientX - offsetX) + 'px'; dragDiv.style.top =
+      (event.clientY - offsetY) + 'px'; } });
+      document.addEventListener('mouseup', function(event) { // Reset dragging
+      flag and cursor style isDragging = false; dragDiv.style.cursor = 'grab';
+      });
+    </sript>
+  </body>
+</html>

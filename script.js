@@ -323,44 +323,59 @@ $(document).ready(function () {
   const section5 = document.querySelector("#section5");
 
   console.log(section3, section4, section5);
-  const section3Pos = section3.offsetTop - 300;
 
-  const section4Pos = section4.offsetTop - 200;
+  if (section3 && section4 && section5) {
+    const section3Pos = section3.offsetTop - 300;
 
-  const section5Pos = section5.offsetTop - 200;
+    const section4Pos = section4.offsetTop - 200;
 
-  console.log("section3 ", section3, section3Pos);
-  console.log("section4 ", section4, section4Pos);
-  console.log("section5 ", section5, section5Pos);
+    const section5Pos = section5.offsetTop - 200;
+  }
 
   // console.log("section3", topPos);
 
+  var currentUrl = window.location.href;
+  console.log("CURRENT URL", currentUrl, currentUrl.includes("notificaiton"));
+
   $(window).on("scroll", function () {
     $(".menu").removeClass("visible");
-    if (window.scrollY > 500) {
-      $("header").addClass("fixed");
-    } else {
-      $("header").removeClass("fixed");
+    if (!currentUrl.includes("notificaiton")) {
+      if (window.scrollY > 500) {
+        $("header").addClass("fixed");
+      } else {
+        $("header").removeClass("fixed");
+      }
     }
-    if (window.scrollY > section3Pos) {
-      $(".nav-fixed").addClass("visible");
-      $("body").addClass("nav-visible");
-    } else {
-      $(".nav-fixed").removeClass("visible");
-      $("body").removeClass("nav-visible");
+
+    if (section3 && section4 && section5) {
+      if (window.scrollY > section3Pos) {
+        $(".nav-fixed").addClass("visible");
+        $("body").addClass("nav-visible");
+      } else {
+        $(".nav-fixed").removeClass("visible");
+        $("body").removeClass("nav-visible");
+      }
+      if (window.scrollY > section3Pos && window.scrollY < section4Pos) {
+        $(".nav-item.pill:not(.section1)").removeClass("active");
+        $(".section1").addClass("active");
+        console.log("between one and two");
+      } else if (window.scrollY > section4Pos && window.scrollY < section5Pos) {
+        $(".nav-item.pill:not(.section2)").removeClass("active");
+        $(".section2").addClass("active");
+        console.log("between two and three");
+      } else if (window.scrollY > section5Pos) {
+        $(".nav-item.pill:not(.section3)").removeClass("active");
+        $(".section3").addClass("active");
+        console.log("above 3");
+      }
     }
-    if (window.scrollY > section3Pos && window.scrollY < section4Pos) {
-      $(".nav-item.pill:not(.section1)").removeClass("active");
-      $(".section1").addClass("active");
-      console.log("between one and two");
-    } else if (window.scrollY > section4Pos && window.scrollY < section5Pos) {
-      $(".nav-item.pill:not(.section2)").removeClass("active");
-      $(".section2").addClass("active");
-      console.log("between two and three");
-    } else if (window.scrollY > section5Pos) {
-      $(".nav-item.pill:not(.section3)").removeClass("active");
-      $(".section3").addClass("active");
-      console.log("above 3");
+
+    //FOR NOTIFICATIONS
+    console.log("FORM NOTIFICAITONS", window.scrollY);
+    if (window.scrollY > 100) {
+      $(".sticky-notification-header").removeClass("d-none");
+    } else {
+      $(".sticky-notification-header").addClass("d-none");
     }
   });
 

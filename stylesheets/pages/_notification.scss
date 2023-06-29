@@ -1,3 +1,109 @@
 .page-notification {
-  padding: 6.3rem 12.1rem;
+  padding: 12.3rem 0;
+  // padding: 18.3rem 12.1rem 2rem;
+  background-color: $color-gc-grey-light;
+  .notificaiton-inner-container {
+    position: relative;
+  }
+  .notification-inner {
+    background-color: white;
+    text-align: center;
+    padding: 3rem 9rem;
+    border-radius: 28px;
+    // max-height: calc(100vh - 83px - 370px);
+    // overflow-y: auto;
+    @media (max-width: 567px) {
+      padding: 20px;
+    }
+    .header-box {
+      background-color: white;
+      border-top-left-radius: 28px;
+      border-top-right-radius: 28px;
+    }
+    .header-box-inner {
+      display: flex;
+      align-items: center;
+      margin-bottom: 21px;
+    }
+    .header-box-inner.left {
+      .icon-container {
+        margin-right: 24px;
+      }
+    }
+    .header-box-inner.right {
+      justify-content: flex-end;
+      .icon-container {
+        margin-left: 24px;
+      }
+    }
+    ul {
+      list-style-type: none;
+      text-align: left;
+      margin-bottom: 28px;
+      li {
+        padding: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          background-color: rgba($color-blue-faded-bg, 0.1);
+        }
+      }
+      li.read {
+        background-color: rgba($color-blue-faded-bg, 0.25);
+      }
+    }
+    .header-box-secondary {
+      text-align: left;
+    }
+  }
+}
+.sticky-notification-header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 83px;
+  z-index: 99;
+  @media (max-width: 1366px) {
+    top: 67px;
+  }
+  @media (max-width: 768px) {
+    top: 60px;
+  }
+  @media (max-width: 567px) {
+    top: 52px;
+  }
+
+  .inner-container {
+    background-color: white;
+    padding: 1rem 9rem;
+    border-top: 1px solid #f0f0f0;
+    box-shadow: 0 3px 8px 0px rgba(0, 0, 0, 0.1);
+    @media (max-width: 567px) {
+      padding: 20px;
+    }
+    .header-box-inner {
+      display: flex;
+      align-items: center;
+
+      margin-bottom: 21px;
+      @media (max-width: 1366px) {
+        margin-bottom: 3px;
+      }
+      @media (max-width: 768px) {
+        margin-bottom: 3px;
+      }
+    }
+    .header-box-inner.left {
+      .icon-container {
+        margin-right: 24px;
+      }
+    }
+    .header-box-inner.right {
+      justify-content: flex-end;
+      cursor: pointer;
+      .icon-container {
+        margin-left: 24px;
+      }
+    }
+  }
 }
