@@ -16,14 +16,14 @@
     }
   }
   .header-box {
-    margin-bottom: 6.2rem;
+    margin-bottom: 62px;
     @media (max-width: 991px) {
       text-align: center;
     }
     h1 {
-      margin-bottom: 1.4rem;
+      margin-bottom: 14px;
       font-size: 38px;
-      margin-bottom: 3.3rem;
+      margin-bottom: 33px;
     }
     h3 {
       font-size: 20px;
@@ -95,8 +95,12 @@
   .content-container-top {
     display: flex;
     align-items: center;
+    @media (min-width: 991px) {
+      margin-top: 74px;
+    }
     .image-container {
       margin-right: 22px;
+      margin-bottom: 12px;
     }
     h2,
     p {

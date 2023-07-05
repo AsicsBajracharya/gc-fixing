@@ -121,8 +121,8 @@
   height: 100%;
   background-image: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.86),
-    rgba(0, 0, 0, 0.01)
+    rgba($color-gc-blue, 0.86),
+    rgba($color-gc-blue, 0.01)
   );
   top: 0;
   left: 0;

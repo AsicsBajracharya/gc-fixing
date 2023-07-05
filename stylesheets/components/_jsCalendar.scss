@@ -1,6 +1,7 @@
 .jsCalendar {
   table {
     width: 100%;
+    background-color: transparent;
     tr {
       display: block;
 
@@ -45,6 +46,7 @@
     tr.jsCalendar-week-days {
       display: flex;
       justify-content: space-between;
+      box-shadow: 0 -8px 10px rgba(0, 0, 0, 0.1);
       th {
         color: $color-muted;
         font-weight: 400;
