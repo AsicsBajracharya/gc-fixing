@@ -90,3 +90,8 @@ select,
     border-color: $color-gc-blue;
   }
 }
+
+main {
+  max-width: 100vw;
+  overflow: hidden;
+}

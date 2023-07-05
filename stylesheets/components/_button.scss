@@ -330,3 +330,14 @@
     color: $color-error;
   }
 }
+
+button {
+  &:disabled {
+    background-color: gray !important;
+    cursor: not-allowed;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: darken($color: gray, $amount: 20%);
+    }
+  }
+}

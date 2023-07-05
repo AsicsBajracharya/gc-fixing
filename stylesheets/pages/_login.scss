@@ -1,18 +1,26 @@
 .page-login,
 .page-signup {
   //   padding-top: 26.3rem;
+  min-height: 100vh;
+  padding-top: 86px;
   h1 {
     color: $color-gc-blue;
   }
-
-  .login-form {
-    @media (min-width: 768px) {
-      padding-right: 6rem;
-    }
+  @media (max-width: 991px) {
+    min-height: auto;
   }
+
   .content-container.left {
-    padding-top: 26.3rem;
+    // padding-top: 26.3rem;
     padding-left: calc((100vw - 1150px) / 2);
+    padding-right: 102px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    @media (max-width: 991px) {
+      padding-right: 0;
+    }
     @media (max-width: 768px) {
       margin-bottom: 30px;
       padding-left: 0;
@@ -21,21 +29,40 @@
       align-items: center;
       justify-content: center;
     }
+    .inner {
+      flex-grow: 1;
+      .header-box {
+        margin-bottom: 2.4rem;
+      }
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
   }
   .content-container.right {
     background-color: $color-grey-solid;
-    padding-top: 24.6rem;
-    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-right: -15px;
-    padding-left: 6.9rem;
+    padding-left: 15px;
     @media (min-width: 1366px) {
-      margin-left: 40px;
+      // margin-left: 40px;
     }
     @media (max-width: 768px) {
       display: none;
     }
     .header-box {
       margin-bottom: 3.9rem;
+      @media (min-width: 1200px) {
+        padding-left: 117px;
+      }
+    }
+    .button-container {
+      @media (min-width: 1200px) {
+        padding-left: 117px;
+      }
     }
     h3 {
       font-size: 20px;
@@ -56,13 +83,32 @@
   }
 }
 .signup-form-step-1 {
+  height: calc(100vh - 86px);
+  @media (max-width: 991px) {
+    height: auto;
+    padding-bottom: 30px;
+  }
+  .container-fluid,
+  .row {
+    height: 100%;
+  }
   .header-box {
     margin-bottom: 4.2rem;
+  }
+  .content-container.right {
+    height: 100%;
+  }
+  .banner-bottom {
+    padding: 0 20px;
+    .header-box {
+      margin: 0;
+      margin-right: 20px;
+    }
   }
 }
 
 .signup-form-step-2 {
-  padding-top: 24rem;
+  // padding-top: 24rem;
   .header-box {
     margin-bottom: 6.1rem;
   }
@@ -77,28 +123,28 @@
     width: 80%;
     margin: 0 auto;
   }
-  .error.email {
+  // .error.email {
+  //   margin-bottom: 4rem;
+  // }
+  // .error.password,
+  // .error.passwordLogin {
+  //   margin-bottom: 4rem;
+  // }
+  // .error.passwordConfirm {
+  //   margin-bottom: 4.8rem;
+  // }
+  .input-group-outer {
     margin-bottom: 4rem;
   }
-  .error.password,
-  .error.passwordLogin {
-    margin-bottom: 4rem;
-  }
-  .error.passwordConfirm {
-    margin-bottom: 4.8rem;
-  }
-
   input,
   select {
     font-size: 1.8rem;
     font-weight: 400;
     border-radius: 10px !important;
-    padding: 3.6rem 1.3rem;
+    padding: 24px 36px 24px 12px;
     border: 2px solid $color-gc-blue;
     transition: all 0.3s ease;
-    @media (max-width: 768px) {
-      padding: 27px 13px;
-    }
+
     &:active,
     &:focus {
       border-color: $color-gc-cyan;
@@ -117,8 +163,7 @@
     display: flex;
     flex-direction: column;
     select {
-      padding-top: 2.3rem;
-      padding-bottom: 2.3rem;
+      padding: 12px;
     }
   }
   .terms-conditions-box {
@@ -181,5 +226,70 @@
     .header-box {
       margin-bottom: 0;
     }
+  }
+}
+
+.input-group-outer {
+  position: relative;
+  .error {
+    position: absolute;
+  }
+}
+
+.error-static {
+  position: inherit !important;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.page-login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @media (max-width: 991px) {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .content-container.right {
+    @media (min-width: 991px) {
+      min-height: 100vh;
+    }
+  }
+  .banner-bottom {
+    width: 100%;
+  }
+}
+
+.page-login {
+  form {
+    width: 100%;
+  }
+  .content-container.left {
+    flex-direction: column;
+    align-items: baseline;
+    .button-container {
+      margin-top: 20px;
+    }
+  }
+}
+
+.content-container.right {
+  background-size: cover;
+  position: relative;
+  .slider-overlay {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(21, 66, 107, 0.8),
+      rgba(21, 66, 107, 0)
+    );
+  }
+  .header-box {
+    position: relative;
+    h1 {
+      color: white;
+    }
+  }
+  .button-container {
+    position: relative;
   }
 }

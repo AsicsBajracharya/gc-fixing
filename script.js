@@ -346,7 +346,7 @@ $(document).ready(function () {
         $("header").removeClass("fixed");
       }
     }
-
+    console.log("scrolling");
     if (section3 && section4 && section5) {
       if (window.scrollY > section3Pos) {
         $(".nav-fixed").addClass("visible");
@@ -831,18 +831,24 @@ jQuery(document).ready(function () {
       $(".error.password").html("This field is required");
       return;
     }
+    if ($(this).val().length < 8) {
+      $(".error.password").html(
+        "A password must be atleast 8 characters long."
+      );
+      return;
+    }
     const passwordPattern =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     const isValidPassword = passwordPattern.test($(this).val());
-    if (!isValidPassword) {
-      $(".error.password").html(`
-           <ul class = "error">
-            <li>Your password should be at least 8 characters long.</li>
-             <li>Include a combination of uppercase and lowercase letters.</li>
-              <li>Include at least one digit (0-9).</li>
-               <li>Include at least one special character, such as @, #, $, %, etc.</li>
-           </ul>`);
-    }
+    // if (!isValidPassword) {
+    //   $(".error.password").addClass("error-static").html(`
+    //        <ul class = "error-collapse">
+    //         <li>Your password should be at least 8 characters long.</li>
+    //          <li>Include a combination of uppercase and lowercase letters.</li>
+    //           <li>Include at least one digit (0-9).</li>
+    //            <li>Include at least one special character, such as @, #, $, %, etc.</li>
+    //        </ul>`);
+    // }
   });
 
   $("#password").on("change paste keyup", function () {
@@ -1040,5 +1046,47 @@ jQuery(document).ready(function () {
       console.log("ready to submit");
       $(".signup-form").submit();
     }
+  });
+  console.log("inupt fields on page 2", $(".signup-form-step-2 input"));
+  // $(".signup-form-step-2 input")
+  //   .toArray()
+  //   .forEach(function (el) {
+  //     $(el).on("change", function (e) {
+  //       console.log("changed on", $(this));
+  //     });
+  //   });
+
+  function checkFields() {
+    var inputs = document.getElementsByTagName("input");
+    var selects = document.getElementsByTagName("select");
+    var checkboxes = document.getElementsByTagName("input");
+
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].type !== "checkbox" && inputs[i].value === "") {
+        document.getElementById("submitBtn").disabled = true;
+        return;
+      }
+    }
+
+    for (var i = 0; i < selects.length; i++) {
+      if (selects[i].value === "") {
+        document.getElementById("submitBtn").disabled = true;
+        return;
+      }
+    }
+
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].type === "checkbox" && !checkboxes[i].checked) {
+        document.getElementById("submitBtn").disabled = true;
+        return;
+      }
+    }
+
+    document.getElementById("submitBtn").disabled = false;
+  }
+
+  $("input, select").on("change paste keyup", function () {
+    console.log("this function ran");
+    checkFields();
   });
 });
